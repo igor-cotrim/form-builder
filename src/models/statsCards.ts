@@ -1,4 +1,4 @@
-import { GetFormStats } from "@/actions/form";
+import { GetFormStats } from "@/actions";
 
 export interface StatsCardsProps {
   data?: Awaited<ReturnType<typeof GetFormStats>>;

@@ -3,7 +3,7 @@ import { FaWpforms } from "react-icons/fa";
 import { HiCursorClick } from "react-icons/hi";
 import { TbArrowBounce } from "react-icons/tb";
 
-import { GetFormStats } from "@/actions/form";
+import { GetFormStats } from "@/actions";
 import { StatsCardProps, StatsCardsProps } from "@/models";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";

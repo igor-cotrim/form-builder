@@ -1,12 +1,13 @@
 "use client";
 
 import React from "react";
+import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ImSpinner2 } from "react-icons/im";
 import { BsFileEarmarkPlus } from "react-icons/bs";
 
-import { CreateForm } from "@/actions/form";
+import { CreateForm } from "@/actions";
 import { formSchema, formSchemaType } from "@/models";
 import {
   Dialog,
@@ -31,6 +32,7 @@ import { Textarea } from "./ui/textarea";
 import { toast } from "./ui/use-toast";
 
 function CreateFormBtn() {
+  const router = useRouter();
   const form = useForm<formSchemaType>({
     resolver: zodResolver(formSchema),
   });
@@ -45,7 +47,7 @@ function CreateFormBtn() {
         variant: "default",
       });
 
-      console.log("formId", formId);
+      router.push(`/builder/${formId}`);
     } catch (error) {
       toast({
         title: "Error",

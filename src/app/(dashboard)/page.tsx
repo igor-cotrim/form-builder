@@ -1,7 +1,13 @@
 import { Suspense } from "react";
 
 import { Separator } from "@/components/ui/separator";
-import { CardStatsWrapper, CreateFormBtn, StatsCards } from "@/components";
+import {
+  CardStatsWrapper,
+  CreateFormBtn,
+  FormCardSkeleton,
+  FormCards,
+  StatsCards,
+} from "@/components";
 
 export default function Home() {
   return (
@@ -14,6 +20,13 @@ export default function Home() {
       <Separator className="my-6" />
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         <CreateFormBtn />
+        <Suspense
+          fallback={[1, 2, 3, 4, 5].map((el) => (
+            <FormCardSkeleton key={el} />
+          ))}
+        >
+          <FormCards />
+        </Suspense>
       </div>
     </div>
   );
