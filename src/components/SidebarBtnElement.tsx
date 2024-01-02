@@ -4,13 +4,13 @@ import React from "react";
 import { useDraggable } from "@dnd-kit/core";
 
 import { cn } from "@/lib/utils";
+import { FormElementProps } from "@/models";
 import { Button } from "./ui/button";
-import { FormElement } from ".";
 
 export function SidebarBtnElement({
   formElement,
 }: {
-  formElement: FormElement;
+  formElement: FormElementProps;
 }) {
   const { label, icon: Icon } = formElement.designerBtnElement;
   const draggable = useDraggable({
@@ -41,7 +41,7 @@ export function SidebarBtnElement({
 export function SidebarBtnElementDragOverlay({
   formElement,
 }: {
-  formElement: FormElement;
+  formElement: FormElementProps;
 }) {
   const { label, icon: Icon } = formElement.designerBtnElement;
 
