@@ -1,5 +1,6 @@
 export { default as CreateFormBtn } from "./CreateFormBtn";
 export { default as Designer } from "./Designer";
+export { default as DesignerElementWrapper } from "./DesignerElementWrapper";
 export { default as DesignerSidebar } from "./DesignerSidebar";
 export { default as DragOverlayWrapper } from "./DragOverlayWrapper";
 export { default as FormBuilder } from "./FormBuilder";
