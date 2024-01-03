@@ -5,8 +5,8 @@ import { Button } from "./ui/button";
 
 function PublishFormBtn() {
   return (
-    <Button variant={"outline"} className="gap-2">
-      <MdOutlinePublish className="w-6 h-6" /> Save
+    <Button className="gap-2 text-white bg-gradient-to-r from-indigo-400 to-cyan-400">
+      <MdOutlinePublish className="w-6 h-6" /> Publish
     </Button>
   );
 }
