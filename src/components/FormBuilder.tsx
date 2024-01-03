@@ -2,7 +2,13 @@
 
 import React from "react";
 import { Form } from "@prisma/client";
-import { DndContext } from "@dnd-kit/core";
+import {
+  DndContext,
+  MouseSensor,
+  TouchSensor,
+  useSensor,
+  useSensors,
+} from "@dnd-kit/core";
 
 import {
   Designer,
@@ -13,8 +19,21 @@ import {
 } from ".";
 
 function FormBuilder({ form }: { form: Form }) {
+  const mouseSensor = useSensor(MouseSensor, {
+    activationConstraint: {
+      distance: 10, // 10px
+    },
+  });
+  const touchSensor = useSensor(TouchSensor, {
+    activationConstraint: {
+      delay: 300, // 3ms
+      tolerance: 5, // 5px
+    },
+  });
+  const sensors = useSensors(mouseSensor, touchSensor);
+
   return (
-    <DndContext>
+    <DndContext sensors={sensors}>
       <main className="flex flex-col w-full">
         <nav className="flex items-center justify-between gap-3 p-4 border-b-2">
           <h2 className="font-medium truncate">
