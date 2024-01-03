@@ -6,6 +6,7 @@ import { FormElementInstance } from "@/models";
 
 type DesignerContextType = {
   elements: FormElementInstance[];
+  setElements: Dispatch<SetStateAction<FormElementInstance[]>>;
   addElement: (index: number, element: FormElementInstance) => void;
   removeElement: (id: string) => void;
   updateElement: (id: string, element: FormElementInstance) => void;
@@ -53,6 +54,7 @@ export function DesignerContextProvider({
     <DesignerContext.Provider
       value={{
         elements,
+        setElements,
         addElement,
         removeElement,
         updateElement,
