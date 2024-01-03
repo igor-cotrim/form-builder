@@ -9,7 +9,8 @@ import { ElementsType } from "@/models";
 import { DesignerElementWrapper, DesignerSidebar, FormElements } from ".";
 
 function Designer() {
-  const { elements, addElement } = useDesigner();
+  const { elements, addElement, selectedElement, setSelectedElement } =
+    useDesigner();
 
   const droppable = useDroppable({
     id: "designer-drop-area",
@@ -39,7 +40,12 @@ function Designer() {
 
   return (
     <div className="flex w-full h-full ">
-      <div className="w-full p-4">
+      <div
+        className="w-full p-4"
+        onClick={() => {
+          if (selectedElement) setSelectedElement(null);
+        }}
+      >
         <div
           ref={droppable.setNodeRef}
           className={cn(

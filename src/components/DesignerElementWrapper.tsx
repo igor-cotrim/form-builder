@@ -11,7 +11,7 @@ import { Button } from "./ui/button";
 import { FormElements } from ".";
 
 function DesignerElementWrapper({ element }: { element: FormElementInstance }) {
-  const { removeElement } = useDesigner();
+  const { removeElement, selectedElement, setSelectedElement } = useDesigner();
   const [mouseIsOver, setMouseIsOver] = useState<boolean>(false);
 
   const topHalf = useDroppable({
@@ -51,6 +51,10 @@ function DesignerElementWrapper({ element }: { element: FormElementInstance }) {
       onMouseEnter={() => setMouseIsOver(true)}
       onMouseLeave={() => setMouseIsOver(false)}
       className="relative h-[120px] flex flex-col text-foreground hover:cursor-pointer rounded-md rign-1 ring-accent ring-inset"
+      onClick={(e) => {
+        e.stopPropagation();
+        setSelectedElement(element);
+      }}
     >
       <div
         ref={topHalf.setNodeRef}
@@ -66,7 +70,10 @@ function DesignerElementWrapper({ element }: { element: FormElementInstance }) {
             <Button
               className="flex justify-center h-full bg-red-500 border rounded-md rounded-l-none"
               variant={"outline"}
-              onClick={() => removeElement(element.id)}
+              onClick={(e) => {
+                e.stopPropagation();
+                removeElement(element.id);
+              }}
             >
               <BiSolidTrash className="w-6 h-6" />
             </Button>
