@@ -24,7 +24,7 @@ function FormLinkShare({ shareUrl }: { shareUrl: string }) {
     <div className="flex items-center flex-grow gap-4">
       <Input value={shareLink} readOnly />
       <Button
-        className="w-[250px]"
+        className="max-w-[250px]"
         onClick={() => {
           navigator.clipboard.writeText(shareLink);
           toast({
