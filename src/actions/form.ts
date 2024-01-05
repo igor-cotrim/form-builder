@@ -128,3 +128,13 @@ export async function GetFormContentByUrl(formUrl: string) {
     data: { visits: { increment: 1 } },
   });
 }
+
+export async function SubmitForm(formUrl: string, content: string) {
+  return await prisma.form.update({
+    data: {
+      submissions: { increment: 1 },
+      formSubmissions: { create: { content } },
+    },
+    where: { shareURL: formUrl, published: true },
+  });
+}

@@ -2,6 +2,8 @@ import { z } from "zod";
 
 export type ElementsType = "TextField";
 
+export type SubmitFunction = (key: string, value: string) => void;
+
 export type FormElementProps = {
   type: ElementsType;
   constructor: (id: string) => FormElementInstance;
@@ -14,10 +16,14 @@ export type FormElementProps = {
   }>;
   formComponent: React.FC<{
     elementInstance: FormElementInstance;
+    submitValue?: SubmitFunction;
+    isInvalid?: boolean;
+    defaultValue?: string;
   }>;
   propertiesComponent: React.FC<{
     elementInstance: FormElementInstance;
   }>;
+  validate: (formElement: FormElementInstance, currentValue: string) => boolean;
 };
 
 export type FormElementInstance = {
