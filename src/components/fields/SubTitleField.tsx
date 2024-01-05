@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { LuHeading1 } from "react-icons/lu";
+import { LuHeading2 } from "react-icons/lu";
 
 import { useDesigner } from "@/hooks";
 import {
@@ -24,7 +24,7 @@ import {
   FormMessage,
 } from "../ui/form";
 
-const type: ElementsType = "TitleField";
+const type: ElementsType = "SubTitleField";
 
 type CustomInstance = FormElementInstance & {
   extraAttributes: typeof extraAttributes;
@@ -37,10 +37,10 @@ const propertiesSchema = z.object({
 });
 
 const extraAttributes = {
-  title: "Title field",
+  title: "SubTitle Field",
 };
 
-export const TitleFieldFormElement: FormElementProps = {
+export const SubTitleFieldFormElement: FormElementProps = {
   type,
   constructor: (id: string) => ({
     id,
@@ -48,8 +48,8 @@ export const TitleFieldFormElement: FormElementProps = {
     extraAttributes,
   }),
   designerBtnElement: {
-    icon: LuHeading1,
-    label: "Title Field",
+    icon: LuHeading2,
+    label: "SubTitle Field",
   },
   designerComponent: DesignerComponent,
   formComponent: FormComponent,
@@ -68,8 +68,8 @@ function DesignerComponent({
 
   return (
     <div className="flex flex-col w-full gap-2">
-      <Label className="flex">Title field</Label>
-      <p className="text-xl">{title}</p>
+      <Label className="flex">SubTitle Field</Label>
+      <p className="text-lg">{title}</p>
     </div>
   );
 }
@@ -139,5 +139,5 @@ function FormComponent({
   const element = elementInstance as CustomInstance;
   const { title } = element.extraAttributes;
 
-  return <p className="text-xl">{title}</p>;
+  return <p className="text-lg">{title}</p>;
 }

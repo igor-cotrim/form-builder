@@ -12,8 +12,12 @@ function FormElementsSidebar() {
         <p className="col-span-1 my-2 text-sm text-muted-foreground md:col-span-2 place-self-start">
           Layout elements
         </p>
-        <SidebarBtnElement formElement={FormElements.TextField} />
         <SidebarBtnElement formElement={FormElements.TitleField} />
+        <SidebarBtnElement formElement={FormElements.SubTitleField} />
+        <p className="col-span-1 my-2 text-sm text-muted-foreground md:col-span-2 place-self-start">
+          Form elements
+        </p>
+        <SidebarBtnElement formElement={FormElements.TextField} />
       </div>
     </div>
   );
