@@ -11,7 +11,9 @@ export { default as Logo } from "./Logo";
 export { default as PreviewDialogBtn } from "./PreviewDialogBtn";
 export { default as PropertiesFormSidebar } from "./PropertiesFormSidebar";
 export { default as PublishFormBtn } from "./PublishFormBtn";
+export { default as RowCell } from "./RowCell";
 export { default as SaveFormBtn } from "./SaveFormBtn";
+export { default as SubmissionsTable } from "./SubmissionsTable";
 export { default as ThemeSwitcher } from "./ThemeSwitcher";
 export { default as VisitBtn } from "./VisitBtn";
 

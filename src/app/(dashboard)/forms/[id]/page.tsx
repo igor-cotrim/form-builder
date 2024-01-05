@@ -5,7 +5,12 @@ import { LuView } from "react-icons/lu";
 import { TbArrowBounce } from "react-icons/tb";
 
 import { GetFormById } from "@/actions";
-import { FormLinkShare, StatsCard, VisitBtn } from "@/components";
+import {
+  FormLinkShare,
+  StatsCard,
+  SubmissionsTable,
+  VisitBtn,
+} from "@/components";
 
 async function FormsPage({ params }: { params: { id: string } }) {
   const { id } = params;
@@ -83,11 +88,3 @@ async function FormsPage({ params }: { params: { id: string } }) {
 }
 
 export default FormsPage;
-
-function SubmissionsTable({ id }: { id: number }) {
-  return (
-    <>
-      <h1 className="my-4 text-2xl font-bold">Submissions</h1>
-    </>
-  );
-}
