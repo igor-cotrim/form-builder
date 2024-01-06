@@ -8,7 +8,8 @@ export type ElementsType =
   | "SpacerField"
   | "TextField"
   | "NumberField"
-  | "TextAreaField";
+  | "TextAreaField"
+  | "DateField";
 
 export type SubmitFunction = (key: string, value: string) => void;
 

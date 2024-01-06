@@ -1,5 +1,6 @@
 import { FormElementsType } from "@/models";
 import {
+  DateFieldFormElement,
   NumberFieldFormElement,
   ParagraphFieldFormElement,
   SeparatorFieldFormElement,
@@ -20,4 +21,5 @@ export const FormElements: FormElementsType = {
   NumberField: NumberFieldFormElement,
   TextField: TextFieldFormElement,
   TextAreaField: TextAreaFieldFormElement,
+  DateField: DateFieldFormElement,
 };
