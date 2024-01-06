@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { MdTextFields } from "react-icons/md";
+import { Bs123 } from "react-icons/bs";
 
 import { useDesigner } from "@/hooks";
 import { cn } from "@/lib";
@@ -27,7 +27,7 @@ import {
   FormMessage,
 } from "../ui/form";
 
-const type: ElementsType = "TextField";
+const type: ElementsType = "NumberField";
 
 type CustomInstance = FormElementInstance & {
   extraAttributes: typeof extraAttributes;
@@ -43,13 +43,13 @@ const propertiesSchema = z.object({
 });
 
 const extraAttributes = {
-  label: "Text Field",
+  label: "Number Field",
   helperText: "Helper text",
   required: false,
-  placeholder: "Enter text here",
+  placeholder: "0",
 };
 
-export const TextFieldFormElement: FormElementProps = {
+export const NumberFieldFormElement: FormElementProps = {
   type,
   constructor: (id: string) => ({
     id,
@@ -57,8 +57,8 @@ export const TextFieldFormElement: FormElementProps = {
     extraAttributes,
   }),
   designerBtnElement: {
-    icon: MdTextFields,
-    label: "Text Field",
+    icon: Bs123,
+    label: "Number Field",
   },
   designerComponent: DesignerComponent,
   formComponent: FormComponent,
@@ -88,7 +88,7 @@ function DesignerComponent({
         {label}
         {required && <p className="pl-1 text-red-500">*</p>}
       </Label>
-      <Input readOnly disabled placeholder={placeholder} />
+      <Input readOnly disabled type="number" placeholder={placeholder} />
       {helperText && (
         <p className="text-[0.8rem] text-muted-foreground">{helperText}</p>
       )}
@@ -244,13 +244,17 @@ function FormComponent({
         {required && <p className="pl-1 text-red-500">*</p>}
       </Label>
       <Input
+        type="number"
         placeholder={placeholder}
         className={cn(error && "border-red-500")}
         onChange={(e) => setValue(e.target.value)}
         onBlur={(e) => {
           if (!submitValue) return;
 
-          const valid = TextFieldFormElement.validate(element, e.target.value);
+          const valid = NumberFieldFormElement.validate(
+            element,
+            e.target.value
+          );
 
           setError(!valid);
 

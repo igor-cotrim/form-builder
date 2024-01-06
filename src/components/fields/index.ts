@@ -1,3 +1,4 @@
+export * from "./NumberField";
 export * from "./ParagraphField";
 export * from "./SeparatorField";
 export * from "./SpacerField";
