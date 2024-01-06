@@ -1,6 +1,7 @@
 export * from "./DateField";
 export * from "./NumberField";
 export * from "./ParagraphField";
+export * from "./SelectField";
 export * from "./SeparatorField";
 export * from "./SpacerField";
 export * from "./SubTitleField";

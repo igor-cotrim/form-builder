@@ -9,7 +9,8 @@ export type ElementsType =
   | "TextField"
   | "NumberField"
   | "TextAreaField"
-  | "DateField";
+  | "DateField"
+  | "SelectField";
 
 export type SubmitFunction = (key: string, value: string) => void;
 

@@ -3,6 +3,7 @@ import {
   DateFieldFormElement,
   NumberFieldFormElement,
   ParagraphFieldFormElement,
+  SelectFieldFormElement,
   SeparatorFieldFormElement,
   SpacerFieldFormElement,
   SubTitleFieldFormElement,
@@ -22,4 +23,5 @@ export const FormElements: FormElementsType = {
   TextField: TextFieldFormElement,
   TextAreaField: TextAreaFieldFormElement,
   DateField: DateFieldFormElement,
+  SelectField: SelectFieldFormElement,
 };
