@@ -2,6 +2,7 @@ import { FormElementsType } from "@/models";
 import {
   ParagraphFieldFormElement,
   SeparatorFieldFormElement,
+  SpacerFieldFormElement,
   SubTitleFieldFormElement,
   TextFieldFormElement,
   TitleFieldFormElement,
@@ -13,4 +14,5 @@ export const FormElements: FormElementsType = {
   SubTitleField: SubTitleFieldFormElement,
   ParagraphField: ParagraphFieldFormElement,
   SeparatorField: SeparatorFieldFormElement,
+  SpacerField: SpacerFieldFormElement,
 };

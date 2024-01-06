@@ -5,7 +5,8 @@ export type ElementsType =
   | "TitleField"
   | "SubTitleField"
   | "ParagraphField"
-  | "SeparatorField";
+  | "SeparatorField"
+  | "SpacerField";
 
 export type SubmitFunction = (key: string, value: string) => void;
 
