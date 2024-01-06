@@ -1,3 +1,4 @@
+export * from "./CheckboxField";
 export * from "./DateField";
 export * from "./NumberField";
 export * from "./ParagraphField";

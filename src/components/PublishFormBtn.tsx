@@ -3,7 +3,7 @@
 import React, { useTransition } from "react";
 import { useRouter } from "next/navigation";
 import { MdOutlinePublish } from "react-icons/md";
-import { FaIcons } from "react-icons/fa";
+import { FaSpinner } from "react-icons/fa";
 
 import { PublishForm } from "@/actions";
 import { Button } from "./ui/button";
@@ -71,7 +71,7 @@ function PublishFormBtn({ id }: { id: number }) {
               startTransition(publishForm);
             }}
           >
-            Proceed {loading && <FaIcons className="animate-spin" />}
+            Proceed {loading && <FaSpinner className="animate-spin" />}
           </AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>

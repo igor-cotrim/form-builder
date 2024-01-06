@@ -27,7 +27,7 @@ import {
 } from ".";
 
 function FormBuilder({ form }: { form: Form }) {
-  const { setElements } = useDesigner();
+  const { setElements, setSelectedElement } = useDesigner();
   const [isReady, setIsReady] = useState(false);
 
   const shareUrl = `${window.location.origin}/submit/${form.shareURL}`;
@@ -51,11 +51,12 @@ function FormBuilder({ form }: { form: Form }) {
     const elements = JSON.parse(form.content);
 
     setElements(elements);
+    setSelectedElement(null);
 
     const readyTimeout = setTimeout(() => setIsReady(true), 500);
 
     return () => clearTimeout(readyTimeout);
-  }, [form, setElements, isReady]);
+  }, [form, setElements, setSelectedElement, isReady]);
 
   if (!isReady) {
     return (

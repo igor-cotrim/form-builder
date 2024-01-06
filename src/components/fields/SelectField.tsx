@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { RxDropdownMenu } from "react-icons/rx";
+import { AiOutlineClose, AiOutlinePlus } from "react-icons/ai";
 
 import { useDesigner } from "@/hooks";
 import { cn } from "@/lib";
@@ -17,6 +18,9 @@ import {
 import { Label } from "../ui/label";
 import { Input } from "../ui/input";
 import { Switch } from "../ui/switch";
+import { Separator } from "../ui/separator";
+import { Button } from "../ui/button";
+import { toast } from "../ui/use-toast";
 import {
   Select,
   SelectContent,
@@ -33,10 +37,6 @@ import {
   FormLabel,
   FormMessage,
 } from "../ui/form";
-import { Separator } from "../ui/separator";
-import { Button } from "../ui/button";
-import { AiOutlineClose, AiOutlinePlus } from "react-icons/ai";
-import { toast } from "../ui/use-toast";
 
 const type: ElementsType = "SelectField";
 
