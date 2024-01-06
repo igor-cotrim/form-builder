@@ -3,5 +3,6 @@ export * from "./ParagraphField";
 export * from "./SeparatorField";
 export * from "./SpacerField";
 export * from "./SubTitleField";
+export * from "./TextAreaField";
 export * from "./TextField";
 export * from "./TitleField";

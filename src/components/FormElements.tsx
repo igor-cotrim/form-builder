@@ -5,6 +5,7 @@ import {
   SeparatorFieldFormElement,
   SpacerFieldFormElement,
   SubTitleFieldFormElement,
+  TextAreaFieldFormElement,
   TextFieldFormElement,
   TitleFieldFormElement,
 } from "./fields";
@@ -18,4 +19,5 @@ export const FormElements: FormElementsType = {
 
   NumberField: NumberFieldFormElement,
   TextField: TextFieldFormElement,
+  TextAreaField: TextAreaFieldFormElement,
 };

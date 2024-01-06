@@ -1,13 +1,14 @@
 import { z } from "zod";
 
 export type ElementsType =
-  | "TextField"
   | "TitleField"
   | "SubTitleField"
   | "ParagraphField"
   | "SeparatorField"
   | "SpacerField"
-  | "NumberField";
+  | "TextField"
+  | "NumberField"
+  | "TextAreaField";
 
 export type SubmitFunction = (key: string, value: string) => void;
 
