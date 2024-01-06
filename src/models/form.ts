@@ -1,6 +1,10 @@
 import { z } from "zod";
 
-export type ElementsType = "TextField" | "TitleField" | "SubTitleField";
+export type ElementsType =
+  | "TextField"
+  | "TitleField"
+  | "SubTitleField"
+  | "ParagraphField";
 
 export type SubmitFunction = (key: string, value: string) => void;
 

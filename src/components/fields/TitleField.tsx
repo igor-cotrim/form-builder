@@ -7,12 +7,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { LuHeading1 } from "react-icons/lu";
 
 import { useDesigner } from "@/hooks";
-import {
-  ElementsType,
-  FormElementInstance,
-  FormElementProps,
-  SubmitFunction,
-} from "@/models";
+import { ElementsType, FormElementInstance, FormElementProps } from "@/models";
 import { Label } from "../ui/label";
 import { Input } from "../ui/input";
 import {

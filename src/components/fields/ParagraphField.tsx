@@ -4,12 +4,11 @@ import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { LuHeading2 } from "react-icons/lu";
 
 import { useDesigner } from "@/hooks";
 import { ElementsType, FormElementInstance, FormElementProps } from "@/models";
 import { Label } from "../ui/label";
-import { Input } from "../ui/input";
+import { Textarea } from "../ui/textarea";
 import {
   Form,
   FormControl,
@@ -18,8 +17,9 @@ import {
   FormLabel,
   FormMessage,
 } from "../ui/form";
+import { BsTextParagraph } from "react-icons/bs";
 
-const type: ElementsType = "SubTitleField";
+const type: ElementsType = "ParagraphField";
 
 type CustomInstance = FormElementInstance & {
   extraAttributes: typeof extraAttributes;
@@ -28,14 +28,14 @@ type CustomInstance = FormElementInstance & {
 type propertiesFormSchemaType = z.infer<typeof propertiesSchema>;
 
 const propertiesSchema = z.object({
-  title: z.string().min(2).max(50),
+  text: z.string().min(2).max(500),
 });
 
 const extraAttributes = {
-  title: "SubTitle Field",
+  text: "text here",
 };
 
-export const SubTitleFieldFormElement: FormElementProps = {
+export const ParagraphFieldFormElement: FormElementProps = {
   type,
   constructor: (id: string) => ({
     id,
@@ -43,8 +43,8 @@ export const SubTitleFieldFormElement: FormElementProps = {
     extraAttributes,
   }),
   designerBtnElement: {
-    icon: LuHeading2,
-    label: "SubTitle Field",
+    icon: BsTextParagraph,
+    label: "Paragraph Field",
   },
   designerComponent: DesignerComponent,
   formComponent: FormComponent,
@@ -59,12 +59,12 @@ function DesignerComponent({
   elementInstance: FormElementInstance;
 }) {
   const element = elementInstance as CustomInstance;
-  const { title } = element.extraAttributes;
+  const { text } = element.extraAttributes;
 
   return (
     <div className="flex flex-col w-full gap-2">
-      <Label className="flex">SubTitle Field</Label>
-      <p className="text-lg">{title}</p>
+      <Label className="flex">Paragraph field</Label>
+      <p>{text}</p>
     </div>
   );
 }
@@ -77,11 +77,11 @@ function PropertiesComponent({
   const { updateElement } = useDesigner();
 
   const element = elementInstance as CustomInstance;
-  const { title } = element.extraAttributes;
+  const { text } = element.extraAttributes;
   const form = useForm<propertiesFormSchemaType>({
     resolver: zodResolver(propertiesSchema),
     mode: "onBlur",
-    defaultValues: { title },
+    defaultValues: { text },
   });
 
   const applyChanges = (values: propertiesFormSchemaType) => {
@@ -104,12 +104,13 @@ function PropertiesComponent({
       >
         <FormField
           control={form.control}
-          name="title"
+          name="text"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Title</FormLabel>
+              <FormLabel>Paragraph</FormLabel>
               <FormControl>
-                <Input
+                <Textarea
+                  rows={5}
                   {...field}
                   onKeyDown={(e) => {
                     if (e.key === "Enter") e.currentTarget.blur();
@@ -132,7 +133,7 @@ function FormComponent({
   elementInstance: FormElementInstance;
 }) {
   const element = elementInstance as CustomInstance;
-  const { title } = element.extraAttributes;
+  const { text } = element.extraAttributes;
 
-  return <p className="text-lg">{title}</p>;
+  return <p>{text}</p>;
 }
