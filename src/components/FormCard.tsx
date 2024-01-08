@@ -1,6 +1,8 @@
 import { Form } from "@prisma/client";
 import Link from "next/link";
+import { useLocale, useTranslations } from "next-intl";
 import { formatDistance } from "date-fns";
+import { ptBR, enUS } from "date-fns/locale";
 import { BiRightArrowAlt } from "react-icons/bi";
 import { FaWpforms, FaEdit } from "react-icons/fa";
 import { LuView } from "react-icons/lu";
@@ -35,19 +37,25 @@ export async function FormCards() {
 }
 
 export function FormCard({ form }: { form: Form }) {
+  const t = useTranslations("forms-cards");
+  const locale = useLocale();
+
   return (
     <Card>
       <CardHeader>
         <CardTitle className="flex items-center justify-between gap-2">
           <span className="font-bold truncate">{form.name}</span>
           {form.published ? (
-            <Badge>Published</Badge>
+            <Badge>{t("published")}</Badge>
           ) : (
-            <Badge variant={"destructive"}>Draft</Badge>
+            <Badge variant={"destructive"}>{t("draft")}</Badge>
           )}
         </CardTitle>
         <CardDescription className="flex items-center justify-between text-sm text-muted-foreground">
-          {formatDistance(form.createdAt, new Date(), { addSuffix: true })}
+          {formatDistance(form.createdAt, new Date(), {
+            addSuffix: true,
+            locale: locale === "en" ? enUS : ptBR,
+          })}
           {form.published && (
             <span className="flex items-center gap-2">
               <LuView className="text-muted-foreground" />
@@ -59,13 +67,13 @@ export function FormCard({ form }: { form: Form }) {
         </CardDescription>
       </CardHeader>
       <CardContent className="h-[20px] truncate text-sm text-muted-foreground">
-        {form.description || "No description"}
+        {form.description || t("no-description")}
       </CardContent>
       <CardFooter>
         {form.published ? (
           <Button asChild className="w-full gap-4 mt-2 text-md">
             <Link href={`/forms/${form.id}`}>
-              View submissings <BiRightArrowAlt />
+              {t("btn-view-submissings")} <BiRightArrowAlt />
             </Link>
           </Button>
         ) : (
@@ -75,7 +83,7 @@ export function FormCard({ form }: { form: Form }) {
             className="w-full gap-4 mt-2 text-md"
           >
             <Link href={`/builder/${form.id}`}>
-              Edit form <FaEdit />
+              {t("btn-edit-form")} <FaEdit />
             </Link>
           </Button>
         )}

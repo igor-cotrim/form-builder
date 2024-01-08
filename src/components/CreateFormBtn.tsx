@@ -31,7 +31,18 @@ import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { toast } from "./ui/use-toast";
 
-function CreateFormBtn() {
+type CreateFormBtnProps = {
+  texts: {
+    btnTitle: string;
+    title: string;
+    subtitle: string;
+    nameInput: string;
+    descriptionInput: string;
+    submit: string;
+  };
+};
+
+function CreateFormBtn({ texts }: CreateFormBtnProps) {
   const router = useRouter();
   const form = useForm<formSchemaType>({
     resolver: zodResolver(formSchema),
@@ -66,16 +77,14 @@ function CreateFormBtn() {
         >
           <BsFileEarmarkPlus className="w-8 h-8 text-muted-foreground group-hover:text-primary" />
           <p className="text-xl font-bold text-muted-foreground group-hover:text-primary">
-            Create new form
+            {texts.btnTitle}
           </p>
         </Button>
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>Create form</DialogTitle>
-          <DialogDescription>
-            Create a new form to start collection responses
-          </DialogDescription>
+          <DialogTitle>{texts.title}</DialogTitle>
+          <DialogDescription>{texts.subtitle}</DialogDescription>
         </DialogHeader>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-2">
@@ -84,7 +93,7 @@ function CreateFormBtn() {
               name="name"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Name</FormLabel>
+                  <FormLabel>{texts.nameInput}</FormLabel>
                   <FormControl>
                     <Input {...field} />
                   </FormControl>
@@ -97,7 +106,7 @@ function CreateFormBtn() {
               name="description"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Description</FormLabel>
+                  <FormLabel>{texts.descriptionInput}</FormLabel>
                   <FormControl>
                     <Textarea rows={5} {...field} />
                   </FormControl>
@@ -114,7 +123,7 @@ function CreateFormBtn() {
             className="w-full mt-4"
           >
             {!form.formState.isSubmitting ? (
-              <span>Save</span>
+              <span>{texts.submit}</span>
             ) : (
               <ImSpinner2 className="animate-spin" />
             )}

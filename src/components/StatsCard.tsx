@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import { LuView } from "react-icons/lu";
 import { FaWpforms } from "react-icons/fa";
 import { HiCursorClick } from "react-icons/hi";
@@ -15,36 +16,38 @@ export async function CardStatsWrapper() {
 }
 
 export function StatsCards({ data, loading }: StatsCardsProps) {
+  const t = useTranslations("stats-cards");
+
   return (
     <div className="grid w-full grid-cols-1 gap-4 pt-8 md:grid-cols-2 lg:grid-cols-4">
       <StatsCard
-        title="Total visits"
+        title={t("total-visits.title")}
         icon={<LuView className="text-blue-600" />}
-        helperText="All time form visits"
+        helperText={t("total-visits.subtitle")}
         value={data?.visits.toLocaleString() || ""}
         loading={loading}
         className="shadow-md shadow-blue-600"
       />
       <StatsCard
-        title="Total submissions"
+        title={t("total-submissions.title")}
         icon={<FaWpforms className="text-yellow-600" />}
-        helperText="All time form submissions"
+        helperText={t("total-submissions.title")}
         value={data?.submissions.toLocaleString() || ""}
         loading={loading}
         className="shadow-md shadow-yellow-600"
       />
       <StatsCard
-        title="Submission rate"
+        title={t("submission-rate.title")}
         icon={<HiCursorClick className="text-green-600" />}
-        helperText="Visits that result in form submission"
+        helperText={t("submission-rate.title")}
         value={`${data?.submissionRate.toLocaleString()}%` || ""}
         loading={loading}
         className="shadow-md shadow-green-600"
       />
       <StatsCard
-        title="Bounce rate"
+        title={t("bounce-rate.title")}
         icon={<TbArrowBounce className="text-red-600" />}
-        helperText="Visits that leave without interacting"
+        helperText={t("bounce-rate.title")}
         value={`${data?.bounceRate.toLocaleString()}%` || ""}
         loading={loading}
         className="shadow-md shadow-red-600"

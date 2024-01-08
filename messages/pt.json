@@ -1,0 +1,57 @@
+{
+  "dashboard": {
+    "title": "Seus formulários"
+  },
+  "stats-cards": {
+    "total-visits": {
+      "title": "Total de visitas",
+      "subtitle": "Visitas permanentes."
+    },
+    "total-submissions": {
+      "title": "Total de envios",
+      "subtitle": "Todos os envios de formulários."
+    },
+    "submission-rate": {
+      "title": "Taxa de envio",
+      "subtitle": "Visitas que resultam no envio de formulário."
+    },
+    "bounce-rate": {
+      "title": "Taxa de rejeição",
+      "subtitle": "Visitas que saem sem interagir."
+    }
+  },
+  "forms-cards": {
+    "published": "Publicado",
+    "draft": "Rascunho",
+    "no-description": "Sem descrição",
+    "btn-view-submissings": "Ver envios",
+    "btn-edit-form": "Editar formulário"
+  },
+  "create-form": {
+    "btn-title": "Criar novo formulário",
+    "title": "Criar formulário",
+    "subtitle": "Crie um novo formulário para iniciar a coleta de respostas",
+    "name-input": "Nome",
+    "description-input": "Descrição",
+    "submit": "Salvar"
+  },
+  "builder": {
+    "title": "Formulário:"
+  },
+  "published-form": {
+    "title": "🎊🎊 Formulário publicado 🎊🎊",
+    "btn-share": "Compartilhe este formulário",
+    "subtitle": "Qualquer pessoa com o link pode visualizar e enviar o formulário",
+    "btn-copy-link": "Copiar link",
+    "btn-go-back": "Voltar para home",
+    "btn-form-details": "Detalhes do formulário"
+  },
+  "toasts": {
+    "copied-title": "Copiado!",
+    "copied-description": "Link copiado para a área de transferência"
+  },
+  "LocaleSwitcher": {
+    "label": "Mudar lingua",
+    "locale": "{locale, select, pt {Português} en {English} other {Unknown}}"
+  }
+}

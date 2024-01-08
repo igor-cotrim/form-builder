@@ -1,0 +1,57 @@
+{
+  "dashboard": {
+    "title": "Your forms"
+  },
+  "stats-cards": {
+    "total-visits": {
+      "title": "Total visits",
+      "subtitle": "All time form visits."
+    },
+    "total-submissions": {
+      "title": "Total submissions",
+      "subtitle": "All time form submissions."
+    },
+    "submission-rate": {
+      "title": "Submission rate",
+      "subtitle": "Visits that result in form submission."
+    },
+    "bounce-rate": {
+      "title": "Bounce rate",
+      "subtitle": "Visits that leave without interacting."
+    }
+  },
+  "forms-cards": {
+    "published": "Published",
+    "draft": "Draft",
+    "no-description": "No description",
+    "btn-view-submissings": "View submissings",
+    "btn-edit-form": "Edit form"
+  },
+  "create-form": {
+    "btn-title": "Create new form",
+    "title": "Create form",
+    "subtitle": "Create a new form to start collection responses",
+    "name-input": "Name",
+    "description-input": "Description",
+    "submit": "Save"
+  },
+  "builder": {
+    "title": "Form:"
+  },
+  "published-form": {
+    "title": "🎊🎊 Form Published 🎊🎊",
+    "btn-share": "Share this form",
+    "subtitle": "Anyone with the link can view and submit the form",
+    "btn-copy-link": "Copy link",
+    "btn-go-back": "Go back home",
+    "btn-form-details": "Form Details"
+  },
+  "toasts": {
+    "copied-title": "Copied!",
+    "copied-description": "Link copied to clipboard"
+  },
+  "LocaleSwitcher": {
+    "label": "Change language",
+    "locale": "{locale, select, pt {Português} en {English} other {Unknown}}"
+  }
+}

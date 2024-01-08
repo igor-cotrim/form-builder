@@ -7,6 +7,8 @@ export { default as FormBuilder } from "./FormBuilder";
 export { default as FormElementsSidebar } from "./FormElementsSidebar";
 export { default as FormLinkShare } from "./FormLinkShare";
 export { default as FormSubmitComponent } from "./FormSubmitComponent";
+export { default as LocaleSwitcher } from "./LocaleSwitcher";
+export { default as LocaleSwitcherSelect } from "./LocaleSwitcherSelect";
 export { default as Logo } from "./Logo";
 export { default as PreviewDialogBtn } from "./PreviewDialogBtn";
 export { default as PropertiesFormSidebar } from "./PropertiesFormSidebar";
