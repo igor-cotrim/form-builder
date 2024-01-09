@@ -1,19 +1,19 @@
 # 📕 FormBuilder
 
-A very modern and beautiful Form Creator!!
+A cutting-edge and visually appealing Form Creator!!!
 
 ## 👇 Test it yourself 
 
-[Test it yourself!!](https://form-builder-sepia.vercel.app/en)
+[Test it now!](https://form-builder-sepia.vercel.app/en)
 
 ## ℹ️ About the project
 
-A project created to create modern forms, with Dnd-kit library, Nextjs 13 with AppRouter, ServerActions, Typescript, Tailwindcss, Shadcn UI (Very cool!!), Vercel PostgreSQL, Prisma as ORM, next-intl
+FormBuilder is a project dedicated to crafting modern and dynamic forms. It leverages technologies such as Dnd-kit library, Next.js 14 with AppRouter, ServerActions, TypeScript, Tailwind CSS, Shadcn UI (impressive!), Vercel PostgreSQL, Prisma as ORM, next-intl and more.
 
 
 ## 🎯 Project's goal
 
-Create a modern form generator, with current market technologies.
+The main goal of this project is to develop a contemporary form generator utilizing the latest technologies in the market.
 
 ## 📝 Techs
 
@@ -31,12 +31,12 @@ Create a modern form generator, with current market technologies.
 
 ## ⚙️ Some features
 
-- Responsive
-- Create forms with a stunning drag and drop designer
-- Layout fields: Title, SubTitle, Spacer, Separator, Paragraph
-- Form fields: Text, Number, Select, Date, Checkbox, Textarea
-- Is easy to add and customize new fields
+- Responsive Design
+- Intuitive drag-and-drop form designer
+- Various layout fields: Title, SubTitle, Spacer, Separator, Paragraph
+- Diverse form fields: Text, Number, Select, Date, Checkbox, Textarea
+- Easy addition and customization of new fields
 - Form preview dialog
-- Share form url
-- Form submission/validation
-- Form stats: visits and submissions
+- Shareable form URL
+- Form submission and validation
+- Form statistics: visits and submissions
