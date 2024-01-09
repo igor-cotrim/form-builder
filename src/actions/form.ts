@@ -151,3 +151,19 @@ export async function GetFormWithSubmissions(id: number) {
     include: { formSubmissions: true },
   });
 }
+
+export async function DeleteForm(id: number) {
+  const user = await currentUser();
+
+  if (!user) {
+    throw new UserNotFoundErr();
+  }
+
+  await prisma.formSubmissions.deleteMany({
+    where: { formId: id },
+  });
+
+  return await prisma.form.delete({
+    where: { userId: user.id, id },
+  });
+}

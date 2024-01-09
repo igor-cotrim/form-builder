@@ -1,4 +1,5 @@
 export { default as CreateFormBtn } from "./CreateFormBtn";
+export { default as DeleteFormBtn } from "./DeleteFormBtn";
 export { default as Designer } from "./Designer";
 export { default as DesignerElementWrapper } from "./DesignerElementWrapper";
 export { default as DesignerSidebar } from "./DesignerSidebar";

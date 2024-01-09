@@ -3,11 +3,11 @@ import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
 import { formatDistance } from "date-fns";
 import { ptBR, enUS } from "date-fns/locale";
-import { BiRightArrowAlt } from "react-icons/bi";
+import { BiRightArrowAlt, BiTrash } from "react-icons/bi";
 import { FaWpforms, FaEdit } from "react-icons/fa";
 import { LuView } from "react-icons/lu";
 
-import { GetForms } from "@/actions";
+import { GetForms, DeleteForm } from "@/actions";
 import { Skeleton } from "./ui/skeleton";
 import {
   Card,
@@ -19,6 +19,7 @@ import {
 } from "./ui/card";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
+import { DeleteFormBtn } from ".";
 
 export function FormCardSkeleton() {
   return <Skeleton className="w-full border-2 border-primary/20 h-[190px]" />;
@@ -39,6 +40,10 @@ export async function FormCards() {
 export function FormCard({ form }: { form: Form }) {
   const t = useTranslations("forms-cards");
   const locale = useLocale();
+
+  const deleteForm = async (id: number) => {
+    await DeleteForm(id);
+  };
 
   return (
     <Card>
@@ -69,7 +74,7 @@ export function FormCard({ form }: { form: Form }) {
       <CardContent className="h-[20px] truncate text-sm text-muted-foreground">
         {form.description || t("no-description")}
       </CardContent>
-      <CardFooter>
+      <CardFooter className="flex items-center justify-center gap-2">
         {form.published ? (
           <Button asChild className="w-full gap-4 mt-2 text-md">
             <Link href={`/forms/${form.id}`}>
@@ -87,6 +92,7 @@ export function FormCard({ form }: { form: Form }) {
             </Link>
           </Button>
         )}
+        <DeleteFormBtn formId={form.id} />
       </CardFooter>
     </Card>
   );
