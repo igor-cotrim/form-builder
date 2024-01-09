@@ -1,36 +1,42 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 📕 FormBuilder
 
-## Getting Started
+A very modern and beautiful Form Creator!!
 
-First, run the development server:
+## 👇 Test it yourself 
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+[Test it yourself!!](https://form-builder-sepia.vercel.app/en)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ℹ️ About the project
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+A project created to create modern forms, with Dnd-kit library, Nextjs 13 with AppRouter, ServerActions, Typescript, Tailwindcss, Shadcn UI (Very cool!!), Vercel PostgreSQL, Prisma as ORM, next-intl
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+## 🎯 Project's goal
 
-To learn more about Next.js, take a look at the following resources:
+Create a modern form generator, with current market technologies.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📝 Techs
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- [React.js](https://pt-br.reactjs.org)
+- [Next.js](https://nextjs.org)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Clerk](https://clerk.com)
+- [Vercel PostgreSQL](https://vercel.com)
+- [TailwindCSS](https://tailwindcss.com)
+- [shadcn/ui](https://ui.shadcn.com)
+- [prisma](https://www.prisma.io)
+- [dndkit](https://docs.dndkit.com)
+- [next-intl](https://next-intl-docs.vercel.app)
+- [Eslint](https://eslint.org/)
 
-## Deploy on Vercel
+## ⚙️ Some features
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Responsive
+- Create forms with a stunning drag and drop designer
+- Layout fields: Title, SubTitle, Spacer, Separator, Paragraph
+- Form fields: Text, Number, Select, Date, Checkbox, Textarea
+- Is easy to add and customize new fields
+- Form preview dialog
+- Share form url
+- Form submission/validation
+- Form stats: visits and submissions
